@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 
-describe('Tela de Login', () => {
+describe('Tela de Login - ESPANHOL', () => {
 
   const enviaLogin = {}
     
@@ -25,6 +25,8 @@ describe('Tela de Login', () => {
       cy.get('#forget-passwordlink').should('be.visible').should('have.text','Ha olvidado su contraseña?')
       //cy.get('.rememberme check').should('be.visible').should('have.text','Recuerdame')
 
+      cy.screenshot('Teste idioma - Página em ESPANHOL')
+
     })
 
 
@@ -33,7 +35,9 @@ describe('Tela de Login', () => {
       cy.get('.language-icon[title="Espanhol"]').click('center')
       cy.fillMandatoryLoginFields(enviaLogin)
       cy.contains('.btn','Iniciar sesión').click('center')
-      cy.get('.logo-default').should('be.visible')
+      cy.url().should('eq', 'https://portalrdvqa.azurewebsites.net/#/tenant/dashboard')
+
+      cy.screenshot('Login com sucesso - Página em ESPANHOL')
       
     });
 
@@ -43,6 +47,8 @@ describe('Tela de Login', () => {
       cy.invalidCompanyDataAndSubmit(enviaLogin)
       cy.get('h2').should('be.visible').should('have.text', 'Inicio de sesión fallido!')
 
+      cy.screenshot('Falha no Login - empresa inválida [ESPANHOL]')
+
     });
 
     it('[ES] Falha no login - usuário inválido', () => {
@@ -50,6 +56,8 @@ describe('Tela de Login', () => {
       cy.get('.language-icon[title="Espanhol"]').click('center')
       cy.invalidUserDataAndSubmit(enviaLogin)
       cy.get('h2').should('be.visible').should('have.text', 'Inicio de sesión fallido!')
+
+      cy.screenshot('Falha no Login - usuário inválido [ESPANHOL]')
       
     })
 
@@ -59,6 +67,8 @@ describe('Tela de Login', () => {
       cy.invalidPasswordDataAndSubmit(enviaLogin)
       cy.get('h2').should('be.visible').should('have.text', 'Inicio de sesión fallido!')
 
+      cy.screenshot('Falha no login - senha inválida [ESPANHOL]')
+
     })
 
     it('[ES] Falha no login - empresa em branco', () => {
@@ -67,6 +77,8 @@ describe('Tela de Login', () => {
       cy.emptyCompanyFieldAndSubmit(enviaLogin)
       cy.get('h2').should('be.visible').should('have.text', 'Inicio de sesión fallido!')
 
+      cy.screenshot('Falha no login - empresa em branco [ESPANHOL]')
+
     })
 
     it('[ES] Falha no login - senha somente um espaço inserido', () => {
@@ -74,6 +86,8 @@ describe('Tela de Login', () => {
       cy.get('.language-icon[title="Espanhol"]').click('center')
       cy.blankSpacePasswordAndSubmit(enviaLogin)
       cy.get('h2').should('be.visible').should('have.text', 'El formulario no es válido. Por favor verifique y corrija los errores.')
+
+      cy.screenshot('Falha no Login - "espaço" como senha [ESPANHOL]')
 
     })
 

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="36.939" tests="6" failures="0">
+  <testsuite name="Root Suite" timestamp="2024-10-14T17:00:41" tests="0" file="cypress\e2e\login.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Tela de Login" timestamp="2024-10-14T17:00:41" tests="6" time="36.935" failures="0">
+    <testcase name="Tela de Login Realizar login com sucesso" time="13.814" classname="Realizar login com sucesso">
+    </testcase>
+    <testcase name="Tela de Login Falha no login - empresa inválida" time="5.629" classname="Falha no login - empresa inválida">
+    </testcase>
+    <testcase name="Tela de Login Falha no login - usuário inválido" time="5.178" classname="Falha no login - usuário inválido">
+    </testcase>
+    <testcase name="Tela de Login Falha no login - senha inválida" time="4.427" classname="Falha no login - senha inválida">
+    </testcase>
+    <testcase name="Tela de Login Falha no login - empresa em branco" time="4.095" classname="Falha no login - empresa em branco">
+    </testcase>
+    <testcase name="Tela de Login Falha no login - senha somente um espaço inserido" time="3.502" classname="Falha no login - senha somente um espaço inserido">
+    </testcase>
+  </testsuite>
+</testsuites>

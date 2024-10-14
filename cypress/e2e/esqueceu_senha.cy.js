@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 
-describe('Tela de Login', () => {
+describe('Tela de Login - esqueceu a senha', () => {
 
   const enviaLogin = {}
     
@@ -21,6 +21,8 @@ describe('Tela de Login', () => {
       cy.get('.sweet-alert > p').should('be.visible').should('have.text', 'Informe empresa.')
       cy.get('.confirm').should('be.visible').click('center')
 
+      cy.screenshot('Esqueceu a senha - todos os campos vazios')
+
     })
 
     it('Esqueceu a senha - campo senha vazio', () => {
@@ -29,6 +31,8 @@ describe('Tela de Login', () => {
       cy.get('#forget-passwordlink').should('be.visible').click()
       cy.get('h2').should('be.visible').should('have.text','Email enviado')
       cy.get('.confirm').should('be.visible').click('center')
+
+      cy.screenshot('Esqueceu a senha - campo Senha vazio')
 
     })
 
@@ -39,6 +43,8 @@ describe('Tela de Login', () => {
       cy.get('.sweet-alert > p').should('be.visible').should('have.text', 'Informe empresa.')
       cy.get('.confirm').should('be.visible').click('center')
 
+      cy.screenshot('Esqueceu a senha - campos Empresa e Senha vazios')
+
     })
 
     it('Esqueceu a senha - campos usuário e senha vazios', () => {
@@ -47,6 +53,8 @@ describe('Tela de Login', () => {
       cy.get('#forget-passwordlink').should('be.visible').click()
       cy.get('.sweet-alert > p').should('be.visible').should('have.text', 'Informe usuário.')
       cy.get('.confirm').should('be.visible').click('center')
+
+      cy.screenshot('Esqueceu a senha - campos Usuário e Senha vazios')
 
     })
 
